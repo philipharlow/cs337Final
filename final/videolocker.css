@@ -1,0 +1,67 @@
+#allbooks div {
+	background-color: #f4f1eb;
+	border-radius: 5px;
+	box-shadow: 0 0 15px gray;
+	float: left;
+	margin: 5%;
+	text-align: center;
+	width: 200px;
+	height: 330px;
+}
+
+#allbooks img {
+	height: 220px;
+	width: 150px;
+}
+
+
+body {
+	background-color: #ddffcc;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	margin: 0px;
+}
+
+#flex-search {
+	top: 85px;
+	display: flex;
+	position: absolute;
+	left: 85px;
+}
+
+#search {
+	width: 500px;
+	height: 25px;
+	font-size: 20pt;
+}
+
+#submit {
+	width: 100px;
+	height:31px;
+	margin-left: 4px; 
+}
+
+#youtubebutton {
+	width: 75px;
+	height: 75px;
+	transform: rotate(180deg);
+	
+}
+
+#header {
+	color: black;
+	display: flex;
+	font-family: Tahoma, sans-serif;
+	position: absolute;
+	width: 100%;
+	background-color: #ffffcc;
+}
+
+#title {
+	margin-left: 10px;
+	font-size: 30pt;
+}
+
+div > span {
+	font-weight: bold;
+	font-size: 50pt;
+}
