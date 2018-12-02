@@ -1,3 +1,0 @@
-Introduction to the Theory of Computation 
-by Michael Sipser
-4.8
