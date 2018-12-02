@@ -36,11 +36,11 @@ app.get('/', function (req, res) {
 				if(contents[j] == "info.txt") {
 					info = fs.readFileSync(folder + "/" + contents[j], 'utf8');
 					info = info.split("\n");
-					let books = {};
-					books["title"] = info[0].trim();
-					console.log(books["title"] + "");
-					books["folder"] = folder.split("/")[2];
-					to_send["list"].push(books);
+					let videos = {};
+					videos["title"] = info[0].trim();
+					console.log(videos["title"] + "");
+					videos["folder"] = folder.split("/")[2];
+					to_send["list"].push(videos);
 					break;
 				}
 			}
@@ -48,14 +48,14 @@ app.get('/', function (req, res) {
 	}
 	else {
 		let j = 0;
-		files = fs.readdirSync("./books");
+		files = fs.readdirSync("./videos");
 		for(var i = 0; i < files.length; i++){
 			folder = files[i].trim();
 			if(folder.includes(title)) {
 				break;
 			}
 		}
-		folder = "./books/" + folder + "/";
+		folder = "./videos/" + folder + "/";
 		file = fs.readdirSync(folder);
 		for(var i = 0; i < file.length; i++) {
 			if(file[i] == "info.txt") {

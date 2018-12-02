@@ -1,4 +1,10 @@
-#allbooks div {
+body {
+	background-color: #ddffcc;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	margin: 0px;
+}
+
+#allvideos div {
 	background-color: #f4f1eb;
 	border-radius: 5px;
 	box-shadow: 0 0 15px gray;
@@ -6,26 +12,34 @@
 	margin: 5%;
 	text-align: center;
 	width: 200px;
-	height: 330px;
+	height: 200px;
 }
 
-#allbooks img {
-	height: 220px;
-	width: 150px;
+#allvideos img {
+	height: 200px;
+	width: 250px;
 }
 
 
-body {
-	background-color: #ddffcc;
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	margin: 0px;
+#stars {
+	display: flex;
+
+}
+
+.arrow {
+	width: 25px;
+	height: 40px;
+	margin: 5px;
+}
+#uparrow {
+	transform: rotate(180deg);
 }
 
 #flex-search {
-	top: 85px;
+	top: 40px;
 	display: flex;
 	position: absolute;
-	left: 85px;
+	left: 450px;
 }
 
 #search {

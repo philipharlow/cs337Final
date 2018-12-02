@@ -4,7 +4,7 @@
   let modeValueDesc = "description";
   let modeValueInfo = "info";
   let modeValueRev = "reviews";
-  let modeValueBook = "books";
+  let modeValueBook = "videos";
   let title = "&title=";
   let bookName;
   let json = {};
@@ -13,29 +13,31 @@
   
   window.onload = function() {
     load();
-    document.getElementById("back").onclick = load;
+    document.getElementById("youtubebutton").onclick = load;
+    document.getElementById("up").onclick = increase;
+    document.getElementById("down").onclick = decrease;
   };
   /**
-  hides the singlebook div and requests to get all the books display info
+  hides the singlevideo div and requests to get all the videos display info
   */
   function load() {
-    document.getElementById("singlebook").style.display = "none";
+    document.getElementById("singlevideo").style.display = "none";
     fetch(url + modeValueBook)
       .then(checkStatus)
       .then(function(responseText) {
         json = JSON.parse(responseText);
         bookList = json.list;
-        listBooks();
+        listVideos();
       })
       .catch(function(error) {
         console.log(error);
       });
   }
   /**
-  gets all the titles and covers of the books provided using promises and adds
-  them to the allbooks div
+  gets all the titles and covers of the videos provided using promises and adds
+  them to the allvideos div
   */
-  function listBooks() {
+  function listVideos() {
       let bookName;
       let folder;
       for(let i = 0; i < bookList.length; i++) {
@@ -44,32 +46,31 @@
         let divs = document.createElement("div");
         divs.id = folder;
         let image = document.createElement("img");
+
         let book = document.createElement("p");
-        image.src = "books/" + folder + "/cover.jpg";
+        image.src = "videos/" + folder + "/cover.jpg";
         book.innerHTML = bookName;
         divs.appendChild(image);
         divs.appendChild(book);
-        document.getElementById("allbooks").appendChild(divs);
-        divs.onclick = showBook; //when the cover or title of a book is clicked
-                                 //it will run the showBook function
+        document.getElementById("allvideos").appendChild(divs);
+        divs.onclick = showVideo; //when the thumbnail or title of a book is clicked
+                                 //it will run the showVideo function
       }
   }
   /**
-  clears the allbook div and fills out the singlebook div with info
+  clears the allbook div and fills out the singlevideo div with info
   */
-  function showBook() {
+  function showVideo() {
     bookName = this.id;
-    document.getElementById("allbooks").innerHTML = "";
-    document.getElementById("singlebook").style.display = "";
-    document.getElementById("cover").src = "books/" + this.id + "/cover.jpg";
+    document.getElementById("allvideos").innerHTML = "";
+    document.getElementById("singlevideo").style.display = "";
+    document.getElementById("thumbnail").src = "videos/" + this.id + "/cover.jpg";
     fetch(url + modeValueInfo + title + this.id)
       .then(checkStatus)
       .then(function(responseText) {
         json = JSON.parse(responseText);
-        document.getElementById("title").innerHTML = json.title;
-        bookName = json.title;
-        document.getElementById("author").innerHTML = json.author;
-        document.getElementById("stars").innerHTML = json.stars;
+        document.getElementById("up").innerHTML = json.author;
+        document.getElementById("down").innerHTML = json.stars;
         
       })
       .catch(function(error) {
