@@ -1,3 +1,9 @@
+/* 
+	Marcos Ayon - Philip Harlow
+	CS 337
+	Final Project
+	This is the css file for the imageLocker website
+*/
 body {
 	background-color: #ddffcc;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -6,6 +12,7 @@ body {
 
 #allvideos div {
 	background-color: #f4f1eb;
+	border-style: solid;
 	border-radius: 5px;
 	box-shadow: 0 0 15px gray;
 	float: left;
@@ -40,6 +47,10 @@ body {
 	display: flex;
 	position: absolute;
 	left: 450px;
+}
+
+#flex-comments {
+	display: flex;
 }
 
 #search {

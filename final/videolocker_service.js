@@ -1,6 +1,13 @@
+/**
+ * Marcos Ayon - Philip Harlow
+ * CS 337
+ * Final Project
+ * This contains the service code
+ */
 const express = require("express");
 const app = express();
 var fs = require('fs');
+let strToFile = "";
 function get_json(file) {
 	file = file.split("by");
 	var recent = "";

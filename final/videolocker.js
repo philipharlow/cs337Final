@@ -1,3 +1,11 @@
+/**
+ * Marcos Ayon - Philip Harlow
+ * CS 337
+ * Final Project
+ * This contains the code for our final project,
+ * where the page loads the information it will display
+ * (the images).
+ */
 "use strict";
 (function () {
   let url = "http://localhost:3000?mode=";
@@ -14,8 +22,9 @@
   window.onload = function() {
     load();
     document.getElementById("youtubebutton").onclick = load;
-    document.getElementById("up").onclick = increase;
-    document.getElementById("down").onclick = decrease;
+    // document.getElementById("up").onclick = increase;
+    // document.getElementById("down").onclick = decrease;
+    document.getElementById("submit").onclick = search;
   };
   /**
   hides the singlevideo div and requests to get all the videos display info
@@ -108,6 +117,22 @@
         console.log(error);
       });
       
+  }
+  /**
+   * Runs when the search/submit button is clicked.
+   * Will validate input
+   */
+  function search(){
+    let searchBox = document.getElementById("search");
+    let searchText = searchBox.value;
+    //Validate user input==
+    let res = searchText.match(/^[a-zA-Z\s]*$/g);
+    if(res == null){
+      //error in search box
+      window.alert("Invalid search text - Letter characters and whitespace only");
+      return;
+    }
+    //=====================
   }
   /** 
     * returns the response text if the status is in the 200s
